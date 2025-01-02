@@ -14,38 +14,27 @@ pip install -e .
 ```
 
 ## Requirements
-QuickNN requires Python 3.8 or higher and the following dependencies:
-- `torch`
+QuickNN requires the following libraries to function properly:
+- `torch`: PyTorch library for building and training neural networks.
+- `torchvision`: For handling datasets and transforms.
+- `matplotlib`: Used for plotting and visualizations.
+- `tqdm`: Provides progress bars for training and data processing.
+- `scikit-learn`: For data preprocessing and evaluation metrics.
 
 You can also install all dependencies using the `requirements.txt` file:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Quick Start
-Here’s a simple example of using a CNN classifier from QuickNN:
-
-```python
-from QuickNN.Test_Models import CNNClassifier
-import torch
-
-# Define model
-model = CNNClassifier(input_channels=3, num_classes=10)
-
-# Dummy input
-dummy_input = torch.randn(8, 3, 32, 32)  # Batch size: 8, Channels: 3, Image size: 32x32
-output = model(dummy_input)
-
-print("Output shape:", output.shape)
-```
-
 ## Directory Structure
 ```
 QuickNN/
 ├── __init__.py
-├── Test_Models.py
-└── utils.py
-setup.py
+├── cnn_classifier.py
+├── cnn_regressor.py
+├── dnn_text_classifier.py
+└── rnn_forecaster.py
+Testing_QuickNN.ipynb
 requirements.txt
 README.md
 ```
@@ -55,13 +44,4 @@ Contributions are welcome! If you have ideas for new features or improvements, f
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-```
 
----
-
-### **`requirements.txt`**
-```plaintext
-torch>=1.10.0
-```
-
----
